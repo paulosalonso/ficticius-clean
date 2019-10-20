@@ -1,6 +1,5 @@
 package com.alon.ficticiusclean.resource.domain;
 
-import com.alon.ficticiusclean.resource.core.CrudResource;
 import com.alon.ficticiusclean.resource.domain.dto.CreateVeiculoInput;
 import com.alon.ficticiusclean.resource.domain.dto.RankingConsumoInput;
 import com.alon.ficticiusclean.resource.domain.dto.RankingConsumoOutput;
@@ -8,6 +7,7 @@ import com.alon.ficticiusclean.resource.domain.dto.UpdateVeiculoInput;
 import com.alon.ficticiusclean.resource.domain.dto.VeiculoResourceDtoConverterProvider;
 import com.alon.ficticiusclean.service.domain.VeiculoService;
 import com.alon.ficticiusclean.service.domain.dto.ConsumoVeiculoDto;
+import com.alon.spring.crud.resource.CrudResource;
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

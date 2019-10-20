@@ -1,6 +1,6 @@
 package com.alon.ficticiusclean.model.domain;
 
-import com.alon.ficticiusclean.model.BaseEntity;
+import com.alon.spring.crud.model.BaseEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -1,6 +1,6 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
-import com.alon.ficticiusclean.resource.core.dto.ResourceDtoConverterProvider;
+import com.alon.spring.crud.resource.dto.ResourceDtoConverterProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

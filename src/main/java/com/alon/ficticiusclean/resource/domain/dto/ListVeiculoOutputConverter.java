@@ -1,7 +1,7 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
 import com.alon.ficticiusclean.model.domain.Veiculo;
-import com.alon.ficticiusclean.resource.core.dto.OutputDtoConverter;
+import com.alon.spring.crud.resource.dto.OutputDtoConverter;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;

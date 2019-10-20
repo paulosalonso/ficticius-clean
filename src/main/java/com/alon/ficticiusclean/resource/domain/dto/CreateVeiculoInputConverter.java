@@ -2,7 +2,7 @@ package com.alon.ficticiusclean.resource.domain.dto;
 
 import com.alon.ficticiusclean.model.domain.Veiculo;
 import com.alon.ficticiusclean.repository.domain.ModeloRepository;
-import com.alon.ficticiusclean.resource.core.dto.InputDtoConverter;
+import com.alon.spring.crud.resource.dto.InputDtoConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

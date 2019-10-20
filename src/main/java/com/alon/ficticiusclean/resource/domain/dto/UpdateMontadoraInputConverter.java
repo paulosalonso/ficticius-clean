@@ -1,7 +1,7 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
 import com.alon.ficticiusclean.model.domain.Montadora;
-import com.alon.ficticiusclean.resource.core.dto.InputDtoConverter;
+import com.alon.spring.crud.resource.dto.InputDtoConverter;
 import org.springframework.stereotype.Component;
 
 @Component

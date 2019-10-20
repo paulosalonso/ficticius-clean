@@ -2,7 +2,7 @@ package com.alon.ficticiusclean.service.domain;
 
 import com.alon.ficticiusclean.model.domain.Modelo;
 import com.alon.ficticiusclean.repository.domain.ModeloRepository;
-import com.alon.ficticiusclean.service.core.CrudService;
+import com.alon.spring.crud.service.CrudService;
 import java.util.Collections;
 import java.util.List;
 import org.springframework.data.domain.Sort;

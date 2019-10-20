@@ -1,6 +1,6 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
-import com.alon.ficticiusclean.resource.core.dto.ListOutput;
+import com.alon.spring.crud.resource.dto.ListOutput;
 import java.util.List;
 import org.springframework.stereotype.Component;
 

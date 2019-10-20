@@ -6,13 +6,13 @@ public class ConsumoVeiculoDto {
     public String marca;
     public String modelo;
     public Integer ano;
-    public Integer consumoCombustivelL;
+    public Double consumoCombustivelL;
     public Double valorTotalCombustivel;
 
     public ConsumoVeiculoDto() {
     }
 
-    public ConsumoVeiculoDto(String nome, String marca, String modelo, int ano, int consumoCombustivelL, double valorTotalCombustivel) {
+    public ConsumoVeiculoDto(String nome, String marca, String modelo, int ano, Double consumoCombustivelL, Double valorTotalCombustivel) {
         this.nome = nome;
         this.marca = marca;
         this.modelo = modelo;
@@ -53,11 +53,11 @@ public class ConsumoVeiculoDto {
         this.ano = ano;
     }
 
-    public Integer getConsumoCombustivelL() {
+    public Double getConsumoCombustivelL() {
         return consumoCombustivelL;
     }
 
-    public void setConsumoCombustivelL(Integer consumoCombustivelL) {
+    public void setConsumoCombustivelL(Double consumoCombustivelL) {
         this.consumoCombustivelL = consumoCombustivelL;
     }
 

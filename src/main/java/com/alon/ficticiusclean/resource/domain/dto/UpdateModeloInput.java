@@ -1,6 +1,6 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
-import com.alon.ficticiusclean.resource.core.dto.InputDto;
+import com.alon.spring.crud.resource.dto.InputDto;
 
 public class UpdateModeloInput implements InputDto {
     

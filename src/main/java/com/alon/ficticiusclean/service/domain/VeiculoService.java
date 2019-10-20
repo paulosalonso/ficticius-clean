@@ -2,8 +2,8 @@ package com.alon.ficticiusclean.service.domain;
 
 import com.alon.ficticiusclean.model.domain.Veiculo;
 import com.alon.ficticiusclean.repository.domain.VeiculoRepository;
-import com.alon.ficticiusclean.service.core.CrudService;
 import com.alon.ficticiusclean.service.domain.dto.ConsumoVeiculoDto;
+import com.alon.spring.crud.service.CrudService;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
@@ -48,23 +48,24 @@ public class VeiculoService extends CrudService<Veiculo, VeiculoRepository> {
     private ConsumoVeiculoDto calculaConsumoVeiculo(
             Veiculo veiculo,
             double precoCombustivel,
-            int distanciaTotalCidadeKm,
-            int distanciaTotalRodoviaKm
-    ) {
-        ConsumoVeiculoDto consumoVeiculoDto = new ConsumoVeiculoDto();
-        
+            double distanciaTotalCidadeKm,
+            double distanciaTotalRodoviaKm
+    ) {        
         double consumoCidade = distanciaTotalCidadeKm / veiculo.getConsumoCidadeKmL();
         double consumoRodovia = distanciaTotalRodoviaKm / veiculo.getConsumoRodoviaKmL();
-        double consumoTotal = consumoCidade + consumoRodovia;
+        double consumoTotal = BigDecimal.valueOf(consumoCidade + consumoRodovia)
+                                        .setScale(2, RoundingMode.HALF_EVEN)
+                                        .doubleValue();
         double valorTotal = BigDecimal.valueOf(consumoTotal * precoCombustivel)
                                       .setScale(2, RoundingMode.HALF_EVEN)
                                       .doubleValue();
         
+        ConsumoVeiculoDto consumoVeiculoDto = new ConsumoVeiculoDto();
         consumoVeiculoDto.nome = veiculo.getNome();
         consumoVeiculoDto.marca = veiculo.getModelo().getMontadora().getNome();
         consumoVeiculoDto.modelo = veiculo.getModelo().getNome();
         consumoVeiculoDto.ano = this.extraiAnoFabricacao(veiculo.getDataFabricacao());
-        consumoVeiculoDto.consumoCombustivelL = (int) consumoTotal;
+        consumoVeiculoDto.consumoCombustivelL = consumoTotal;
         consumoVeiculoDto.valorTotalCombustivel = valorTotal;
         
         return consumoVeiculoDto;

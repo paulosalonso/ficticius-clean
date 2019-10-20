@@ -1,7 +1,7 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
-import com.alon.ficticiusclean.resource.core.dto.ListOutput;
 import com.alon.ficticiusclean.service.domain.dto.ConsumoVeiculoDto;
+import com.alon.spring.crud.resource.dto.ListOutput;
 import java.util.List;
 
 public class RankingConsumoOutput extends ListOutput<ConsumoVeiculoDto> {

@@ -1,8 +1,10 @@
 package com.alon.ficticiusclean.resource.domain.dto;
 
 import com.alon.ficticiusclean.model.domain.Modelo;
+import com.alon.ficticiusclean.model.domain.Montadora;
 import com.alon.ficticiusclean.repository.domain.MontadoraRepository;
 import com.alon.spring.crud.resource.dto.InputDtoConverter;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +16,13 @@ public class CreateModeloInputConverter implements InputDtoConverter<CreateModel
     
     @Override
     public Modelo convert(CreateModeloInput input) {
+        Optional<Montadora> montadoraOpt = this.montadoraRepository.findById(input.montadoraId);
+        
+        if (montadoraOpt.isEmpty())
+            throw new RuntimeException(String.format("A montadora informada não existe (id: %d).", input.montadoraId));
+        
         Modelo modelo = new Modelo();
-        modelo.setMontadora(this.montadoraRepository.getOne(input.montadoraId));
+        modelo.setMontadora(montadoraOpt.get());
         modelo.setNome(input.nome);
         
         return modelo;

@@ -15,9 +15,9 @@ Gerar o executável (JAR):
 mvn package
 ```
 
-Executar a aplicação via linha de comando:
+O JAR será criado na pasta /target, dentro do diretório do projeto. Acessá-la e executar a aplicação via linha de comando:
 ```
-java -jar <caminho-da-aplicaço>/ficticius-clean-1.0.0.jar
+java -jar ficticius-clean-1.0.0.jar
 ```
 
 ## Testar

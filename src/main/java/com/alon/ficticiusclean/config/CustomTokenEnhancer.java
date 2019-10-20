@@ -1,6 +1,6 @@
 package com.alon.ficticiusclean.config;
 
-import com.alon.ficticiusclean.model.User;
+import com.alon.ficticiusclean.model.security.User;
 import java.util.Map;
 
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;

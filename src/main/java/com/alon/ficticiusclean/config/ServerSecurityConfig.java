@@ -1,6 +1,6 @@
 package com.alon.ficticiusclean.config;
 
-import com.alon.ficticiusclean.service.UserService;
+import com.alon.ficticiusclean.service.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

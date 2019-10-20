@@ -29,30 +29,30 @@ create table UserPrivilege (
 );
 
 alter table UserEntity 
-   add constraint UK_jreodf78a7pl5qidfh43axdfb unique (username);
+   add constraint UK_Username unique (username);
 
 alter table PrivilegeRole 
-   add constraint UK_orm50i59uyipqqq27nc8b8j60 unique (privilegeId, roleId);
+   add constraint UK_Privilege_Role unique (privilegeId, roleId);
 
 alter table UserPrivilege 
-   add constraint UK_leqqhi9culxrofm2clfsr5pd6 unique (userId, privilegeId);
+   add constraint UK_User_Privilege unique (userId, privilegeId);
 
 alter table PrivilegeRole 
-   add constraint FKgw5hr56xf8lrqllkgpr7820l9 
+   add constraint FK_PrivilegeRole_Role
    foreign key (roleId) 
    references Role;
 
 alter table PrivilegeRole 
-   add constraint FKqplr3mcb9dm9v42fm6g4l0e69 
+   add constraint FK_PrivilegeRole_Privilege
    foreign key (privilegeId) 
    references Privilege;
 
 alter table UserPrivilege 
-   add constraint FK6fv885gi8vw4e90mfsq0u56y3 
+   add constraint FK_UserPrivilege_Privilege
    foreign key (privilegeId) 
    references Privilege;
 
 alter table UserPrivilege 
-   add constraint FKtq5tlelt80y1v476oye60so93 
+   add constraint FK_UserPrivilege_User
    foreign key (userId) 
    references UserEntity;

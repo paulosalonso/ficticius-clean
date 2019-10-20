@@ -26,7 +26,7 @@ Acessar, no navegador, a URL http://localhost:8080/swagger-ui.html
 
 ### Filtros
 
-Os endpoints de busca (http://localhost:8080/\<resource-path\>/list) podem receber filtros, através do parâmetro "filter" na url.
+Os endpoints de busca (http://localhost:8080/<resource-path\>/list) podem receber filtros, através do parâmetro "filter" na url.
 
 Os filtros podem ser implementados seguindo as orientações do projeto [QueryDecoder](https://github.com/paulosalonso/query-decoder/blob/master/README.md).
 

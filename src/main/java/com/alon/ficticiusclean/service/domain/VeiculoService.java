@@ -34,15 +34,13 @@ public class VeiculoService extends CrudService<Veiculo, VeiculoRepository> {
         
         List<Veiculo> veiculos = this.list(page, size).getContent();
         
-        List<ConsumoVeiculoDto> ranking = 
-                veiculos.stream()
-                        .map(veiculo -> this.calculaConsumoVeiculo(veiculo, 
-                                                                   precoCombustivel, 
-                                                                   distanciaTotalCidadeKm, 
-                                                                   distanciaTotalRodoviaKm))
-                                            .collect(Collectors.toList());
-        
-        return this.ordenarRanking(ranking);
+        return veiculos.stream()
+                       .map(veiculo -> this.calculaConsumoVeiculo(veiculo, 
+                                                                  precoCombustivel, 
+                                                                  distanciaTotalCidadeKm, 
+                                                                  distanciaTotalRodoviaKm))
+                       .sorted(this::rankingSort)
+                       .collect(Collectors.toList());
     }
     
     private ConsumoVeiculoDto calculaConsumoVeiculo(
@@ -76,11 +74,9 @@ public class VeiculoService extends CrudService<Veiculo, VeiculoRepository> {
         return Integer.valueOf(ano);
     }
     
-    private List<ConsumoVeiculoDto> ordenarRanking(List<ConsumoVeiculoDto> ranking) {
-        ranking.sort((veiculoA, veiculoB) -> veiculoA.valorTotalCombustivel
-                                                     .compareTo(veiculoB.getValorTotalCombustivel()));
-        
-        return ranking;
+    private int rankingSort(ConsumoVeiculoDto veiculoA, ConsumoVeiculoDto veiculoB) {
+        return veiculoA.valorTotalCombustivel
+                       .compareTo(veiculoB.getValorTotalCombustivel());
     }
     
 }
